@@ -6,13 +6,14 @@
 #define EX3_SYMBOLVAR_H
 #include "Expression.h"
 #include "SymTbl.h"
-class SymbolExpression : public Expression {
-  SymTbl* var;
-  string nameVar;
-public:
-    SymbolExpression(SymTbl* froMap,string nameVar);
-    double calculate();
+class SymbolExpression : public Expression
+{
+    SymTbl *var;
+    string nameVar;
+
+   public:
+    SymbolExpression (SymTbl *froMap, string nameVar);
+    double calculate ();
 };
 
-
-#endif //EX3_SYMBOLVAR_H
+#endif // EX3_SYMBOLVAR_H

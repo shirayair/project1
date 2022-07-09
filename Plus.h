@@ -7,10 +7,11 @@
 
 #include "BinaryExpression.h"
 
-class Plus : public BinaryExpression {
-public:
-    Plus(Expression *left, Expression *right);
+class Plus : public BinaryExpression
+{
+   public:
+    Plus (Expression *left, Expression *right);
 
-    virtual double calculate();
+    virtual double calculate ();
 };
-#endif //EX3_PLUS_H
+#endif // EX3_PLUS_H

@@ -7,17 +7,19 @@
 #include "Command.h"
 #include "Expression.h"
 #include "FSParamMap.h"
+
 #include <pthread.h>
 
-class OpenDataServerCommand : public Command {
-    Expression* port;
-    Expression* hertz;
-    FSParamMap* fsParamMap;
+class OpenDataServerCommand : public Command
+{
+    Expression *port;
+    Expression *hertz;
+    FSParamMap *fsParamMap;
 
-public:
-    OpenDataServerCommand(Expression* p, Expression* h, FSParamMap* fsParamMap);
-    void execute() override;
-    ~OpenDataServerCommand();
+   public:
+    OpenDataServerCommand (Expression *p, Expression *h, FSParamMap *fsParamMap);
+    void execute () override;
+    ~OpenDataServerCommand ();
 };
 
-#endif //EX3_OPENDATASERVER_H
+#endif // EX3_OPENDATASERVER_H

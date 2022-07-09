@@ -7,12 +7,12 @@
 
 #include "BinaryExpression.h"
 
+class Minus : public BinaryExpression
+{
+   public:
+    Minus (Expression *left, Expression *right);
 
-class Minus : public BinaryExpression {
-public:
-    Minus(Expression *left, Expression *right);
-
-    double calculate();
+    double calculate ();
 };
 
-#endif //EX3_MINUS_H
+#endif // EX3_MINUS_H

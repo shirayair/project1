@@ -7,21 +7,20 @@
 #include <string>
 #include <vector>
 
-
 typedef std::string::iterator stritr;
-class Lexer {
+class Lexer
+{
     std::string fileName;
 
-public:
-    Lexer(string fileName);
-    std::vector<std::string> readFromScript();
-    std::vector<std::string> toEnterAccording(std::string line);
-    bool isDigit(char c);
-    bool ifToSeperate(char c,char s);
-    bool isOperator(char c);
-    std::vector<std::string>  seperateVector(std::vector<std::string> scriptSpleet);
-    bool isSign(char c);
+   public:
+    Lexer (string fileName);
+    std::vector<std::string> readFromScript ();
+    std::vector<std::string> toEnterAccording (std::string line);
+    bool isDigit (char c);
+    bool ifToSeperate (char c, char s);
+    bool isOperator (char c);
+    std::vector<std::string> seperateVector (std::vector<std::string> scriptSpleet);
+    bool isSign (char c);
 };
 
-
-#endif //EX3_LEXER_H
+#endif // EX3_LEXER_H

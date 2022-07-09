@@ -3,10 +3,12 @@
 //
 
 #include "ExitCommand.h"
+
 #include "Client.h"
 #include "Server.h"
 
-void ExitCommand::execute() {
-    Client::closeClient();
-    Server::stop();
+void ExitCommand::execute ()
+{
+    Client::closeClient ();
+    Server::stop ();
 }

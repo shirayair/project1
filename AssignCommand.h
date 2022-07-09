@@ -5,22 +5,20 @@
 #ifndef EX3_ASSIGNCOMMAND_H
 #define EX3_ASSIGNCOMMAND_H
 
-
-#include "SymTbl.h"
 #include "Command.h"
 #include "Expression.h"
+#include "SymTbl.h"
 
-class AssignCommand: public Command {
-    SymTbl* symTbl;
+class AssignCommand : public Command
+{
+    SymTbl *symTbl;
     string symName;
-    Expression* symValue;
+    Expression *symValue;
 
-public:
-    AssignCommand(SymTbl* symTbl1, string symName, Expression* symValue);
-    void execute() override;
-    ~AssignCommand();
-
+   public:
+    AssignCommand (SymTbl *symTbl1, string symName, Expression *symValue);
+    void execute () override;
+    ~AssignCommand ();
 };
 
-
-#endif //EX3_ASSIGNCOMMAND_H
+#endif // EX3_ASSIGNCOMMAND_H

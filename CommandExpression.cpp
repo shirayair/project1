@@ -3,17 +3,20 @@
 //
 
 #include "CommandExpression.h"
-CommandExpression::CommandExpression(Command *command) {
+
+CommandExpression::CommandExpression (Command *command)
+{
     this->c = command;
-
 }
 
-double CommandExpression:: calculate(){
-    c->execute();
+double CommandExpression::calculate ()
+{
+    c->execute ();
 }
 
-CommandExpression::~CommandExpression() {
-    if(this->c != nullptr) {
+CommandExpression::~CommandExpression ()
+{
+    if (this->c != nullptr) {
         delete this->c;
     }
 }

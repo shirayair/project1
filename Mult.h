@@ -6,12 +6,12 @@
 #define EX3_MULT_H
 #include "BinaryExpression.h"
 
-class Mult : public BinaryExpression {
-public:
-    Mult(Expression *left, Expression *right);
+class Mult : public BinaryExpression
+{
+   public:
+    Mult (Expression *left, Expression *right);
 
-    double calculate();
+    double calculate ();
 };
 
-#endif //EX3_MULT_H
-
+#endif // EX3_MULT_H

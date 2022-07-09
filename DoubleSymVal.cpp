@@ -4,14 +4,17 @@
 
 #include "DoubleSymVal.h"
 
-DoubleSymVal::DoubleSymVal(double val) {
+DoubleSymVal::DoubleSymVal (double val)
+{
     this->value = val;
 }
 
-double DoubleSymVal::getVal() {
+double DoubleSymVal::getVal ()
+{
     return this->value;
 }
 
-void DoubleSymVal::setVal(double value) {
+void DoubleSymVal::setVal (double value)
+{
     this->value = value;
 }

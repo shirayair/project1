@@ -5,17 +5,17 @@
 #ifndef EX3_PRINTCOMMAND_H
 #define EX3_PRINTCOMMAND_H
 
-
 #include "Command.h"
 #include "SymTbl.h"
 
-class PrintCommand : public Command{
+class PrintCommand : public Command
+{
     string str;
-    SymTbl* symTbl;
-public:
-    PrintCommand(string str, SymTbl* symTbl);
-    void execute()override;
+    SymTbl *symTbl;
+
+   public:
+    PrintCommand (string str, SymTbl *symTbl);
+    void execute () override;
 };
 
-
-#endif //EX3_PRINTCOMMAND_H
+#endif // EX3_PRINTCOMMAND_H

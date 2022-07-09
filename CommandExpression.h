@@ -5,17 +5,17 @@
 #ifndef EX3_COMMANDEXPRESSION_H
 #define EX3_COMMANDEXPRESSION_H
 
-
-#include "Expression.h"
 #include "Command.h"
+#include "Expression.h"
 
-class CommandExpression: public Expression {
-    Command* c = nullptr;
-public:
-  CommandExpression(Command* command);
-  ~CommandExpression();
-   double calculate();
+class CommandExpression : public Expression
+{
+    Command *c = nullptr;
+
+   public:
+    CommandExpression (Command *command);
+    ~CommandExpression ();
+    double calculate ();
 };
 
-
-#endif //EX3_COMMANDEXPRESSION_H
+#endif // EX3_COMMANDEXPRESSION_H

@@ -4,14 +4,17 @@
 
 #include "Number.h"
 
-Number::Number(double val) {
+Number::Number (double val)
+{
     this->value = val;
 }
 
-double Number::calculate() {
+double Number::calculate ()
+{
     return this->value;
 }
 
-double Number::getValue() {
+double Number::getValue ()
+{
     return this->value;
 }

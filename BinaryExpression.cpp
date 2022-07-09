@@ -4,20 +4,24 @@
 
 #include "BinaryExpression.h"
 
-BinaryExpression::BinaryExpression(Expression *left, Expression *right) {
+BinaryExpression::BinaryExpression (Expression *left, Expression *right)
+{
     this->left = left;
     this->right = right;
 }
 
-BinaryExpression::~BinaryExpression() {
+BinaryExpression::~BinaryExpression ()
+{
     delete this->right;
     delete this->left;
 }
 
-Expression *BinaryExpression::getLeft() {
+Expression *BinaryExpression::getLeft ()
+{
     return this->left;
 }
 
-Expression *BinaryExpression::getRight() {
+Expression *BinaryExpression::getRight ()
+{
     return this->right;
 }

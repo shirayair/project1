@@ -5,16 +5,16 @@
 #ifndef EX3_DOUBLESYMVAL_H
 #define EX3_DOUBLESYMVAL_H
 
-
 #include "SymVal.h"
 
-class DoubleSymVal: public SymVal {
+class DoubleSymVal : public SymVal
+{
     double value;
-public:
-    DoubleSymVal(double val);
-    double getVal() override;
-    void setVal(double value);
+
+   public:
+    DoubleSymVal (double val);
+    double getVal () override;
+    void setVal (double value);
 };
 
-
-#endif //EX3_DOUBLESYMVAL_H
+#endif // EX3_DOUBLESYMVAL_H

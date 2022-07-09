@@ -5,25 +5,24 @@
 #ifndef EX3_PATHVAL_H
 #define EX3_PATHVAL_H
 
+#include "Client.h"
+#include "FSParamMap.h"
+#include "SymTbl.h"
+#include "SymVal.h"
 
 #include <string>
-#include "SymVal.h"
-#include "SymTbl.h"
-#include "FSParamMap.h"
 #include <vector>
-#include "Client.h"
 using namespace std;
 
-class PathSymVal: public SymVal {
+class PathSymVal : public SymVal
+{
     string path;
-    FSParamMap* fsParamMap;
+    FSParamMap *fsParamMap;
 
-public:
-    PathSymVal(string path, FSParamMap* fsParamMap1);
-    double getVal() override;
-    void setVal(double value) override;
-
+   public:
+    PathSymVal (string path, FSParamMap *fsParamMap1);
+    double getVal () override;
+    void setVal (double value) override;
 };
 
-
-#endif //EX3_PATHVAL_H
+#endif // EX3_PATHVAL_H

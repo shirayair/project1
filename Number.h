@@ -7,15 +7,16 @@
 
 #include "Expression.h"
 
-class Number :public Expression {
+class Number : public Expression
+{
     double value;
-public:
-    Number(double val);
 
-    virtual double calculate();
+   public:
+    Number (double val);
 
-    double getValue();
+    virtual double calculate ();
 
+    double getValue ();
 };
 
-#endif //EX3_NUMBER_H
+#endif // EX3_NUMBER_H

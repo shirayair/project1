@@ -4,13 +4,14 @@
 
 #ifndef EX3_DIV_H
 #define EX3_DIV_H
-#include "Expression.h"
 #include "BinaryExpression.h"
+#include "Expression.h"
 
-class Div:public BinaryExpression{
-public:
-    Div(Expression* expLeft,Expression* expRight);
-    double calculate();
+class Div : public BinaryExpression
+{
+   public:
+    Div (Expression *expLeft, Expression *expRight);
+    double calculate ();
 };
 
-#endif //EX3_DIV_H
+#endif // EX3_DIV_H

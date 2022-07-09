@@ -4,27 +4,28 @@
 
 #ifndef EX3_SHUNTINGYARD_H
 #define EX3_SHUNTINGYARD_H
-#include <string>
-#include <map>
 #include "Expression.h"
-#include "stack"
 #include "SymTbl.h"
+#include "stack"
+
+#include <map>
+#include <string>
 
 using namespace std;
 
-
-class ShuntingYard {
-    SymTbl* expVar;
+class ShuntingYard
+{
+    SymTbl *expVar;
     map<char, int> prcedence;
-public:
 
-    ShuntingYard(SymTbl* expVar);
-    ~ShuntingYard() = default;
-    void initializeMap();
+   public:
+    ShuntingYard (SymTbl *expVar);
+    ~ShuntingYard () = default;
+    void initializeMap ();
 
-    int precedence(char operation);
-    Expression *createExpression(string tokens);
-    Expression* applyOp(Expression* val1,Expression*  val2,char operation);
+    int precedence (char operation);
+    Expression *createExpression (string tokens);
+    Expression *applyOp (Expression *val1, Expression *val2, char operation);
 };
 
-#endif //EX3_SHUNTINGYARD_H
+#endif // EX3_SHUNTINGYARD_H

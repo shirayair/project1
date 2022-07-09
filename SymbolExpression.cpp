@@ -4,10 +4,12 @@
 
 #include "SymbolExpression.h"
 
-SymbolExpression::SymbolExpression(SymTbl *froMap, string nameVar){
+SymbolExpression::SymbolExpression (SymTbl *froMap, string nameVar)
+{
     this->var = froMap;
-   this->nameVar = nameVar;
+    this->nameVar = nameVar;
 }
-double SymbolExpression:: calculate(){
-  return this->var->getSymbol(nameVar)->getVal();
+double SymbolExpression::calculate ()
+{
+    return this->var->getSymbol (nameVar)->getVal ();
 }

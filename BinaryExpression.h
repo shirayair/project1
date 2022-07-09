@@ -7,18 +7,19 @@
 
 #include "Expression.h"
 
-class BinaryExpression : public Expression {
-protected:
+class BinaryExpression : public Expression
+{
+   protected:
     Expression *left;
     Expression *right;
-public:
-    BinaryExpression(Expression *left, Expression *right);
 
-    virtual Expression *getLeft();
+   public:
+    BinaryExpression (Expression *left, Expression *right);
 
-    virtual Expression *getRight();
-    virtual ~BinaryExpression();
+    virtual Expression *getLeft ();
+
+    virtual Expression *getRight ();
+    virtual ~BinaryExpression ();
 };
 
-
-#endif //EX3_BINAREYEXPRESSION_H
+#endif // EX3_BINAREYEXPRESSION_H
