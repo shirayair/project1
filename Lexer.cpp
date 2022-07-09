@@ -134,7 +134,7 @@ bool Lexer::isSign (char c)
 std::vector<std::string> Lexer::seperateVector (std::vector<std::string> scriptSpleet)
 {
     std::vector<std::string> newSplit;
-    string val = "";
+    std::string val = "";
     int index = 0;
     std::vector<std::string>::iterator itr;
     for (itr = scriptSpleet.begin (); itr != scriptSpleet.end (); itr++) {
@@ -174,7 +174,7 @@ std::vector<std::string> Lexer::seperateVector (std::vector<std::string> scriptS
         }
         if (*b == '\"') {
             if (val != "") {
-                string s = (*itr).erase (0, 1);
+                std::string s = (*itr).erase (0, 1);
                 newSplit.push_back (val);
                 newSplit.push_back (s);
                 val = "";

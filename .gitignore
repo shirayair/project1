@@ -1,0 +1,7 @@
+*.out
+*.bin
+temp/
+build/
+bin/
+*.swp
+

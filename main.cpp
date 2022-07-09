@@ -13,7 +13,7 @@ int main (int argc, char *argv[])
     }
 
     try {
-        auto fsParamMap = std::make_uique<FSParamMap> ();
+        auto fsParamMap = std::make_unique<FSParamMap> ();
         auto symTbl = std::make_unique<SymTbl> ();
         auto lexer = std::make_unique<Lexer> (argv[1]);
         auto parser = std::make_unique<Parser> (symTbl.get (), lexer->readFromScript (), fsParamMap.get ());

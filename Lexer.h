@@ -13,7 +13,7 @@ class Lexer
     std::string fileName;
 
    public:
-    Lexer (string fileName);
+    Lexer (std::string fileName);
     std::vector<std::string> readFromScript ();
     std::vector<std::string> toEnterAccording (std::string line);
     bool isDigit (char c);
