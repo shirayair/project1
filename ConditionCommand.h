@@ -18,14 +18,14 @@ class ConditionCommand : public Command
     Expression *exp2;
     string sign;
 
-   protected:
+protected:
     list<Expression *> commands;
-    bool checkCondition ();
+    bool checkCondition();
 
-   public:
-    ConditionCommand (Expression *exp1, Expression *exp2, string sign);
-    void addCommand (list<Expression *> commands);
-    virtual ~ConditionCommand ();
+public:
+    ConditionCommand(Expression *exp1, Expression *exp2, string sign);
+    void addCommand(list<Expression *> commands);
+    virtual ~ConditionCommand();
 };
 
 #endif // EX3_CONDITIONCOMMAND_H

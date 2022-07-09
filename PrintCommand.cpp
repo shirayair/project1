@@ -5,15 +5,15 @@
 #include "PrintCommand.h"
 
 #include <iostream>
-PrintCommand ::PrintCommand (string str, SymTbl *symTbl1)
+PrintCommand ::PrintCommand(string str, SymTbl *symTbl1)
 {
     this->str = str;
     this->symTbl = symTbl1;
 }
-void PrintCommand::execute ()
+void PrintCommand::execute()
 {
-    if (symTbl->isSymExist (str)) {
-        auto val = symTbl->getSymbol (str)->getVal ();
+    if (symTbl->isSymExist(str)) {
+        auto val = symTbl->getSymbol(str)->getVal();
         cout << val << endl;
     } else {
         cout << this->str << endl;

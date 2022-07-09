@@ -12,15 +12,15 @@ class Lexer
 {
     std::string fileName;
 
-   public:
-    Lexer (std::string fileName);
-    std::vector<std::string> readFromScript ();
-    std::vector<std::string> toEnterAccording (std::string line);
-    bool isDigit (char c);
-    bool ifToSeperate (char c, char s);
-    bool isOperator (char c);
-    std::vector<std::string> seperateVector (std::vector<std::string> scriptSpleet);
-    bool isSign (char c);
+public:
+    Lexer(std::string fileName);
+    std::vector<std::string> readFromScript();
+    std::vector<std::string> toEnterAccording(std::string line);
+    bool isDigit(char c);
+    bool ifToSeperate(char c, char s);
+    bool isOperator(char c);
+    std::vector<std::string> seperateVector(std::vector<std::string> scriptSpleet);
+    bool isSign(char c);
 };
 
 #endif // EX3_LEXER_H

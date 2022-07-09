@@ -6,17 +6,17 @@
 
 #include <thread>
 
-PathSymVal::PathSymVal (string path, FSParamMap *fsParamMap1)
+PathSymVal::PathSymVal(string path, FSParamMap *fsParamMap1)
 {
     this->path = path;
     this->fsParamMap = fsParamMap1;
 }
-double PathSymVal::getVal ()
+double PathSymVal::getVal()
 {
-    return this->fsParamMap->getVal (path);
+    return this->fsParamMap->getVal(path);
 }
 // client
-void PathSymVal::setVal (double value)
+void PathSymVal::setVal(double value)
 {
-    Client::send (path, value);
+    Client::send(path, value);
 }

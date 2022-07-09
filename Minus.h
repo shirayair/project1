@@ -9,10 +9,10 @@
 
 class Minus : public BinaryExpression
 {
-   public:
-    Minus (Expression *left, Expression *right);
+public:
+    Minus(Expression *left, Expression *right);
 
-    double calculate ();
+    double calculate();
 };
 
 #endif // EX3_MINUS_H

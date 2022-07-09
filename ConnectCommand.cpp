@@ -5,19 +5,19 @@
 #include "ConnectCommand.h"
 
 #include <iostream>
-ConnectCommand ::ConnectCommand (string ip, Expression *port)
+ConnectCommand ::ConnectCommand(string ip, Expression *port)
 {
     this->ip = ip;
     this->port = port;
 }
-ConnectCommand::~ConnectCommand ()
+ConnectCommand::~ConnectCommand()
 {
     delete this->port;
 }
-void ConnectCommand::execute ()
+void ConnectCommand::execute()
 {
-    int int_port = (int)this->port->calculate ();
+    int int_port = (int)this->port->calculate();
     cout << "Please enter char only when simulator is on." << endl;
-    cin.ignore ();
-    Client::connectClient (this->ip, int_port);
+    cin.ignore();
+    Client::connectClient(this->ip, int_port);
 }

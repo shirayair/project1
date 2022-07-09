@@ -15,10 +15,10 @@ class CommandSleep : public Command
 {
     Expression *sleep;
 
-   public:
-    explicit CommandSleep (Expression *sleep);
-    ~CommandSleep ();
-    void execute () override;
+public:
+    explicit CommandSleep(Expression *sleep);
+    ~CommandSleep();
+    void execute() override;
 };
 
 #endif // EX3_COMANDSLEEP_H

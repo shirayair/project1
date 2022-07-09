@@ -16,10 +16,10 @@ class OpenDataServerCommand : public Command
     Expression *hertz;
     FSParamMap *fsParamMap;
 
-   public:
-    OpenDataServerCommand (Expression *p, Expression *h, FSParamMap *fsParamMap);
-    void execute () override;
-    ~OpenDataServerCommand ();
+public:
+    OpenDataServerCommand(Expression *p, Expression *h, FSParamMap *fsParamMap);
+    void execute() override;
+    ~OpenDataServerCommand();
 };
 
 #endif // EX3_OPENDATASERVER_H

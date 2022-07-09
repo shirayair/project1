@@ -4,14 +4,14 @@
 
 #include "Mult.h"
 
-Mult::Mult (Expression *left, Expression *right) : BinaryExpression (left, right)
+Mult::Mult(Expression *left, Expression *right) : BinaryExpression(left, right)
 {
 }
 
-double Mult::calculate ()
+double Mult::calculate()
 {
-    auto rightI = this->getRight ()->calculate ();
-    auto leftI = this->getLeft ()->calculate ();
+    auto rightI = this->getRight()->calculate();
+    auto leftI = this->getLeft()->calculate();
 
     return leftI * rightI;
 }

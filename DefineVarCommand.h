@@ -19,12 +19,12 @@ class DefineVarCommand : public Command
     string path = "";
     FSParamMap *fsParamMap1;
 
-   public:
-    DefineVarCommand (SymTbl *symTbl, string varName, string PointerName);
-    DefineVarCommand (SymTbl *symTbl, string varName, string path, FSParamMap *fsParamMap1);
-    DefineVarCommand (SymTbl *symTbl, string varName, Expression *varVal);
-    void execute () override;
-    ~DefineVarCommand ();
+public:
+    DefineVarCommand(SymTbl *symTbl, string varName, string PointerName);
+    DefineVarCommand(SymTbl *symTbl, string varName, string path, FSParamMap *fsParamMap1);
+    DefineVarCommand(SymTbl *symTbl, string varName, Expression *varVal);
+    void execute() override;
+    ~DefineVarCommand();
 };
 
 #endif // EX3_DEFINEVARCOMMAND_H

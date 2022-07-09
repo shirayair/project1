@@ -9,9 +9,9 @@
 
 class Div : public BinaryExpression
 {
-   public:
-    Div (Expression *expLeft, Expression *expRight);
-    double calculate ();
+public:
+    Div(Expression *expLeft, Expression *expRight);
+    double calculate();
 };
 
 #endif // EX3_DIV_H

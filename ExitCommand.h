@@ -10,8 +10,8 @@
 class ExitCommand : public Command
 {
 
-   public:
-    void execute () override;
+public:
+    void execute() override;
 };
 
 #endif // EX3_EXITCOMMAND_H

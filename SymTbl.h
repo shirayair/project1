@@ -16,11 +16,11 @@ class SymTbl
 {
     map<string, SymVal *> table;
 
-   public:
-    SymVal *getSymbol (string sym);
-    void addSymbol (string symName, SymVal *val);
-    bool isSymExist (string sym);
-    ~SymTbl ();
+public:
+    SymVal *getSymbol(string sym);
+    void addSymbol(string symName, SymVal *val);
+    bool isSymExist(string sym);
+    ~SymTbl();
 };
 
 #endif // EX3_SYMTBL_H

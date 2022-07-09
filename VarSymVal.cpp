@@ -6,17 +6,17 @@
 
 #include "SymTbl.h"
 
-VarSymVal::VarSymVal (SymTbl *symTbl, string PointerName)
+VarSymVal::VarSymVal(SymTbl *symTbl, string PointerName)
 {
     this->name = PointerName;
     this->symTbl = symTbl;
 }
-double VarSymVal::getVal ()
+double VarSymVal::getVal()
 {
-    return this->symTbl->getSymbol (this->name)->getVal ();
+    return this->symTbl->getSymbol(this->name)->getVal();
 }
-void VarSymVal::setVal (double value)
+void VarSymVal::setVal(double value)
 {
-    SymVal *symVal = this->symTbl->getSymbol (name);
-    symVal->setVal (value);
+    SymVal *symVal = this->symTbl->getSymbol(name);
+    symVal->setVal(value);
 }

@@ -16,21 +16,21 @@
 int server_fdGlobal;
 // extern bool connectedGame;
 
-OpenDataServerCommand::OpenDataServerCommand (Expression *p, Expression *h, FSParamMap *fsParamMap)
+OpenDataServerCommand::OpenDataServerCommand(Expression *p, Expression *h, FSParamMap *fsParamMap)
 {
     this->port = p;
     this->hertz = h;
     this->fsParamMap = fsParamMap;
 }
 
-OpenDataServerCommand::~OpenDataServerCommand ()
+OpenDataServerCommand::~OpenDataServerCommand()
 {
     delete this->port;
     delete this->hertz;
 }
-void OpenDataServerCommand::execute ()
+void OpenDataServerCommand::execute()
 {
-    int port1 = (int)this->port->calculate ();
-    int hertz1 = (int)this->hertz->calculate ();
-    Server::run (port1, hertz1, fsParamMap);
+    int port1 = (int)this->port->calculate();
+    int hertz1 = (int)this->hertz->calculate();
+    Server::run(port1, hertz1, fsParamMap);
 }

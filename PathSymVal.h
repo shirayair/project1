@@ -19,10 +19,10 @@ class PathSymVal : public SymVal
     string path;
     FSParamMap *fsParamMap;
 
-   public:
-    PathSymVal (string path, FSParamMap *fsParamMap1);
-    double getVal () override;
-    void setVal (double value) override;
+public:
+    PathSymVal(string path, FSParamMap *fsParamMap1);
+    double getVal() override;
+    void setVal(double value) override;
 };
 
 #endif // EX3_PATHVAL_H

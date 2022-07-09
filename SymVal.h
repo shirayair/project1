@@ -7,10 +7,10 @@
 
 class SymVal
 {
-   public:
-    virtual double getVal () = 0;
-    virtual void setVal (double value) = 0;
-    virtual ~SymVal () = default;
+public:
+    virtual double getVal() = 0;
+    virtual void setVal(double value) = 0;
+    virtual ~SymVal() = default;
 };
 
 #endif // EX3_SYMVAL_H

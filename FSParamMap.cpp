@@ -5,57 +5,57 @@
 #include "FSParamMap.h"
 
 #include <sstream>
-FSParamMap::FSParamMap ()
+FSParamMap::FSParamMap()
 {
-    pthread_mutex_init (&this->tex, nullptr);
+    pthread_mutex_init(&this->tex, nullptr);
     this->pathMap["/instrumentation/heading-indicator/offset-deg"] = 0;
 }
 
-FSParamMap::~FSParamMap ()
+FSParamMap::~FSParamMap()
 {
-    pthread_mutex_destroy (&this->tex);
+    pthread_mutex_destroy(&this->tex);
 }
 
-bool FSParamMap::parsBuffer (string &buff2)
+bool FSParamMap::parsBuffer(string &buff2)
 {
     std::vector<double> vect;
     int n = 0;
     int i = 0;
-    for (; i < buff2.length (); i++) {
+    for (; i < buff2.length(); i++) {
         if (buff2[i] == '\n') {
             n = i;
             break;
         }
     }
-    if (i == buff2.length ()) {
+    if (i == buff2.length()) {
         return false;
     }
 
-    std::stringstream ss (buff2);
+    std::stringstream ss(buff2);
     double d;
-    while (ss >> d && vect.size () <= 22) {
-        vect.push_back (d);
-        if (ss.peek () == ',')
-            ss.ignore ();
+    while (ss >> d && vect.size() <= 22) {
+        vect.push_back(d);
+        if (ss.peek() == ',')
+            ss.ignore();
     }
 
-    buff2 = buff2.substr (n + 1, buff2.length () - n - 1);
+    buff2 = buff2.substr(n + 1, buff2.length() - n - 1);
 
-    inserToMap (vect);
+    inserToMap(vect);
     return true;
 }
 
-double FSParamMap::getVal (string path)
+double FSParamMap::getVal(string path)
 {
-    pthread_mutex_lock (&this->tex);
+    pthread_mutex_lock(&this->tex);
     auto x = this->pathMap[path];
-    pthread_mutex_unlock (&this->tex);
+    pthread_mutex_unlock(&this->tex);
     return x;
 }
 
-void FSParamMap::inserToMap (vector<double> &vector)
+void FSParamMap::inserToMap(vector<double> &vector)
 {
-    pthread_mutex_lock (&this->tex);
+    pthread_mutex_lock(&this->tex);
     this->pathMap["/instrumentation/airspeed-indicator/indicated-speed-kt"] = vector[0];
     this->pathMap["/instrumentation/altimeter/indicated-altitude-ft"] = vector[1];
     this->pathMap["/instrumentation/altimeter/pressure-alt-ft"] = vector[2];
@@ -79,5 +79,5 @@ void FSParamMap::inserToMap (vector<double> &vector)
     this->pathMap["/engines/engine/rpm"] = vector[20];
     this->pathMap["/controls/flight/aileron"] = vector[21];
     this->pathMap["/controls/flight/elevator"] = vector[22];
-    pthread_mutex_unlock (&this->tex);
+    pthread_mutex_unlock(&this->tex);
 }

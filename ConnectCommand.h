@@ -14,10 +14,10 @@ class ConnectCommand : public Command
     string ip;
     Expression *port;
 
-   public:
-    ConnectCommand (string ip, Expression *port);
-    ~ConnectCommand ();
-    void execute ();
+public:
+    ConnectCommand(string ip, Expression *port);
+    ~ConnectCommand();
+    void execute();
 };
 
 #endif // EX3_CONNECTCOMMAND_H

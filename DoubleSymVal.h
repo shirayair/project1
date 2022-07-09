@@ -11,10 +11,10 @@ class DoubleSymVal : public SymVal
 {
     double value;
 
-   public:
-    DoubleSymVal (double val);
-    double getVal () override;
-    void setVal (double value);
+public:
+    DoubleSymVal(double val);
+    double getVal() override;
+    void setVal(double value);
 };
 
 #endif // EX3_DOUBLESYMVAL_H

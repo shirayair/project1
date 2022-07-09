@@ -11,12 +11,12 @@ class Number : public Expression
 {
     double value;
 
-   public:
-    Number (double val);
+public:
+    Number(double val);
 
-    virtual double calculate ();
+    virtual double calculate();
 
-    double getValue ();
+    double getValue();
 };
 
 #endif // EX3_NUMBER_H

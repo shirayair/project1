@@ -17,11 +17,11 @@ struct arg_struct {
 class Server
 {
 
-   public:
+public:
     static bool sould_stop;
     static pthread_t pthreadID;
-    static void run (int port, int herz, FSParamMap *fsParamMap);
-    static void stop ();
+    static void run(int port, int herz, FSParamMap *fsParamMap);
+    static void stop();
 };
 
 #endif // EX3_SERVER_H

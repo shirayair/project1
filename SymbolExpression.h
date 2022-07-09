@@ -11,9 +11,9 @@ class SymbolExpression : public Expression
     SymTbl *var;
     string nameVar;
 
-   public:
-    SymbolExpression (SymTbl *froMap, string nameVar);
-    double calculate ();
+public:
+    SymbolExpression(SymTbl *froMap, string nameVar);
+    double calculate();
 };
 
 #endif // EX3_SYMBOLVAR_H

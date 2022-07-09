@@ -8,10 +8,10 @@
 
 class Mult : public BinaryExpression
 {
-   public:
-    Mult (Expression *left, Expression *right);
+public:
+    Mult(Expression *left, Expression *right);
 
-    double calculate ();
+    double calculate();
 };
 
 #endif // EX3_MULT_H

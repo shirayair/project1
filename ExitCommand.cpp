@@ -7,8 +7,8 @@
 #include "Client.h"
 #include "Server.h"
 
-void ExitCommand::execute ()
+void ExitCommand::execute()
 {
-    Client::closeClient ();
-    Server::stop ();
+    Client::closeClient();
+    Server::stop();
 }

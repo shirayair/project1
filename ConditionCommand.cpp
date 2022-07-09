@@ -4,13 +4,13 @@
 
 #include "ConditionCommand.h"
 
-ConditionCommand::ConditionCommand (Expression *exp1, Expression *exp2, string sign)
+ConditionCommand::ConditionCommand(Expression *exp1, Expression *exp2, string sign)
 {
     this->exp1 = exp1;
     this->exp2 = exp2;
     this->sign = sign;
 }
-ConditionCommand::~ConditionCommand ()
+ConditionCommand::~ConditionCommand()
 {
     delete this->exp1;
     delete this->exp2;
@@ -19,10 +19,10 @@ ConditionCommand::~ConditionCommand ()
     }
 }
 
-bool ConditionCommand::checkCondition ()
+bool ConditionCommand::checkCondition()
 {
-    double val1 = exp1->calculate ();
-    double val2 = exp2->calculate ();
+    double val1 = exp1->calculate();
+    double val2 = exp2->calculate();
     if (sign == "<=" && val1 <= val2) {
         return true;
     }
@@ -44,7 +44,7 @@ bool ConditionCommand::checkCondition ()
     return false;
 }
 
-void ConditionCommand::addCommand (list<Expression *> commands)
+void ConditionCommand::addCommand(list<Expression *> commands)
 {
     this->commands = commands;
 }

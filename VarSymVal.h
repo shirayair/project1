@@ -16,10 +16,10 @@ class VarSymVal : public SymVal
     string name;
     SymTbl *symTbl;
 
-   public:
-    VarSymVal (SymTbl *symTbl, string PointerName);
-    double getVal () override;
-    void setVal (double value) override;
+public:
+    VarSymVal(SymTbl *symTbl, string PointerName);
+    double getVal() override;
+    void setVal(double value) override;
 };
 
 #endif // EX3_VARSYMVAL_H

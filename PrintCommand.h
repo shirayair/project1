@@ -13,9 +13,9 @@ class PrintCommand : public Command
     string str;
     SymTbl *symTbl;
 
-   public:
-    PrintCommand (string str, SymTbl *symTbl);
-    void execute () override;
+public:
+    PrintCommand(string str, SymTbl *symTbl);
+    void execute() override;
 };
 
 #endif // EX3_PRINTCOMMAND_H

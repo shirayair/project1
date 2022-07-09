@@ -4,17 +4,18 @@
 
 #include "CommandExpression.h"
 
-CommandExpression::CommandExpression (Command *command)
+CommandExpression::CommandExpression(Command *command)
 {
     this->c = command;
 }
 
-double CommandExpression::calculate ()
+double CommandExpression::calculate()
 {
-    c->execute ();
+    c->execute();
+    return 0.0;
 }
 
-CommandExpression::~CommandExpression ()
+CommandExpression::~CommandExpression()
 {
     if (this->c != nullptr) {
         delete this->c;

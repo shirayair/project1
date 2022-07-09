@@ -9,9 +9,9 @@
 
 class IfCommand : public ConditionCommand
 {
-   public:
-    IfCommand (Expression *exp1, Expression *exp2, string sign);
-    void execute () override;
+public:
+    IfCommand(Expression *exp1, Expression *exp2, string sign);
+    void execute() override;
 };
 
 #endif // EX3_IFCOMMAND_H

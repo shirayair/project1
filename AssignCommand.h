@@ -15,10 +15,10 @@ class AssignCommand : public Command
     string symName;
     Expression *symValue;
 
-   public:
-    AssignCommand (SymTbl *symTbl1, string symName, Expression *symValue);
-    void execute () override;
-    ~AssignCommand ();
+public:
+    AssignCommand(SymTbl *symTbl1, string symName, Expression *symValue);
+    void execute() override;
+    ~AssignCommand();
 };
 
 #endif // EX3_ASSIGNCOMMAND_H

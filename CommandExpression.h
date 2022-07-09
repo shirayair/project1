@@ -12,10 +12,10 @@ class CommandExpression : public Expression
 {
     Command *c = nullptr;
 
-   public:
-    CommandExpression (Command *command);
-    ~CommandExpression ();
-    double calculate ();
+public:
+    CommandExpression(Command *command);
+    ~CommandExpression();
+    double calculate();
 };
 
 #endif // EX3_COMMANDEXPRESSION_H

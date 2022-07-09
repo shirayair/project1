@@ -9,9 +9,9 @@
 
 class Plus : public BinaryExpression
 {
-   public:
-    Plus (Expression *left, Expression *right);
+public:
+    Plus(Expression *left, Expression *right);
 
-    virtual double calculate ();
+    virtual double calculate();
 };
 #endif // EX3_PLUS_H

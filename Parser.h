@@ -20,9 +20,9 @@ class Parser
     SymTbl *symTbl;
     FSParamMap *fsParamMap;
 
-   public:
-    Parser (SymTbl *symTbl, vector<string> strings, FSParamMap *fsParamsMap);
-    void fromStringToExcute ();
-    list<Expression *> fromStringToList ();
+public:
+    Parser(SymTbl *symTbl, vector<string> strings, FSParamMap *fsParamsMap);
+    void fromStringToExcute();
+    list<Expression *> fromStringToList();
 };
 #endif // EX3_PARSER_H

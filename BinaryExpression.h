@@ -9,17 +9,17 @@
 
 class BinaryExpression : public Expression
 {
-   protected:
+protected:
     Expression *left;
     Expression *right;
 
-   public:
-    BinaryExpression (Expression *left, Expression *right);
+public:
+    BinaryExpression(Expression *left, Expression *right);
 
-    virtual Expression *getLeft ();
+    virtual Expression *getLeft();
 
-    virtual Expression *getRight ();
-    virtual ~BinaryExpression ();
+    virtual Expression *getRight();
+    virtual ~BinaryExpression();
 };
 
 #endif // EX3_BINAREYEXPRESSION_H
