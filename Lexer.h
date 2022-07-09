@@ -7,19 +7,19 @@
 #include <string>
 #include <vector>
 
-using namespace std;
-typedef string::iterator stritr;
+
+typedef std::string::iterator stritr;
 class Lexer {
-    string fileName;
+    std::string fileName;
 
 public:
     Lexer(string fileName);
-    vector<string> readFromScript();
-    vector<string> toEnterAccording(string line);
+    std::vector<std::string> readFromScript();
+    std::vector<std::string> toEnterAccording(std::string line);
     bool isDigit(char c);
     bool ifToSeperate(char c,char s);
     bool isOperator(char c);
-    vector<string>  seperateVector(vector<string> scriptSpleet);
+    std::vector<std::string>  seperateVector(std::vector<std::string> scriptSpleet);
     bool isSign(char c);
 };
 

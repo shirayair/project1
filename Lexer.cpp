@@ -10,18 +10,17 @@
 #include <ctype.h>
 #include "Lexer.h"
 
-typedef string::iterator stritr;
 
-Lexer::Lexer(string fileName) {
+Lexer::Lexer(std::string fileName) {
     this->fileName = fileName;
 }
 
-vector<string> Lexer::readFromScript() {
-    vector<string> orders;
-    ifstream readFile;
+std::vector<std::string> Lexer::readFromScript() {
+    std::vector<std::string> orders;
+    std::ifstream readFile;
     readFile.open(fileName);
     if (readFile.is_open()) {
-        string line;
+        std::string line;
         while (getline(readFile, line)) {
             auto x = this->toEnterAccording(line);
             orders.insert(orders.end(), x.begin(), x.end());
@@ -35,8 +34,8 @@ bool Lexer::isOperator(char c) {
     return c == '*' || c == '+' || c == '/' || c == '-' || c == '(' || c == ')';
 }
 
-vector<string> Lexer::toEnterAccording(string line) {
-    vector<string> orders;
+std::vector<std::string> Lexer::toEnterAccording(std::string line) {
+    std::vector<std::string> orders;
     stritr b = line.begin();
     stritr e = line.end();
     while (b != e) {
@@ -45,7 +44,7 @@ vector<string> Lexer::toEnterAccording(string line) {
             continue;
         }
         if(isSign(*b)){
-            string s ="";
+            std::string s ="";
             s+=*b;
             if((*(b + 1)) == '=') {
                 s+= *(++b);
@@ -53,12 +52,12 @@ vector<string> Lexer::toEnterAccording(string line) {
             orders.push_back(s);
         }
         if (*b == ',') {
-            string p = "";
+            std::string p = "";
             p += *b;
             orders.push_back(p);
         }
         if (isDigit(*b)) {
-            string val = "";
+            std::string val = "";
             while (isDigit(*b) || *b == '.') {
                 val += *b;
                 b++;
@@ -66,11 +65,11 @@ vector<string> Lexer::toEnterAccording(string line) {
             b--;
             orders.push_back(val);
         } else if (isOperator(*b)) {
-            string s = "";
+            std::string s = "";
             s += *b;
             orders.push_back(s);
         } else if (isalpha(*b)) {
-            string val = "";
+            std::string val = "";
             while (isalpha(*b) || isdigit(*b) || (*b) == '_') {
                 val += *b;
                 b++;
@@ -81,7 +80,7 @@ vector<string> Lexer::toEnterAccording(string line) {
 
         if (*b == '\"') {
             b++;
-            string val = "";
+            std::string val = "";
             while (*b != '\"') {
                 val += *b;
                 b++;
@@ -89,7 +88,7 @@ vector<string> Lexer::toEnterAccording(string line) {
             orders.push_back(val);
         }
         if (*b == '=') {
-            string a = "";
+            std::string a = "";
             a += *b;
             if(*(b+1) == '=') {
                 a+= *(++b);
@@ -97,12 +96,12 @@ vector<string> Lexer::toEnterAccording(string line) {
             orders.push_back(a);
         }
         if (*b == '{') {
-            string w = "";
+            std::string w = "";
             w += *b;
             orders.push_back(w);
         }
         if (*b == '}') {
-            string w = "";
+            std::string w = "";
             w += *b;
             orders.push_back(w);
         }
@@ -129,11 +128,11 @@ bool Lexer::isSign(char c) {
     return c == '>' || c == '<' ||  c == '!';
 }
 
-vector<string> Lexer::seperateVector(vector<string> scriptSpleet) {
-    vector<string> newSplit;
+std::vector<std::string> Lexer::seperateVector(std::vector<std::string> scriptSpleet) {
+    std::vector<std::string> newSplit;
     string val = "";
     int index = 0;
-    std::vector<string>::iterator itr;
+    std::vector<std::string>::iterator itr;
     for (itr = scriptSpleet.begin(); itr != scriptSpleet.end(); itr++) {
         stritr b = itr->begin();
         if (isalpha(*b)) {
