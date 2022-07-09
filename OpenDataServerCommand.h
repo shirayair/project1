@@ -12,12 +12,12 @@
 
 class OpenDataServerCommand : public Command
 {
-    Expression *port;
-    Expression *hertz;
-    FSParamMap *fsParamMap;
+    Expression* port;
+    Expression* hertz;
+    FSParamMap* fsParamMap;
 
 public:
-    OpenDataServerCommand(Expression *p, Expression *h, FSParamMap *fsParamMap);
+    OpenDataServerCommand(Expression* p, Expression* h, FSParamMap* fsParamMap);
     void execute() override;
     ~OpenDataServerCommand();
 };

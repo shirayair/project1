@@ -4,7 +4,7 @@
 
 #include "SymbolExpression.h"
 
-SymbolExpression::SymbolExpression(SymTbl *froMap, string nameVar)
+SymbolExpression::SymbolExpression(SymTbl* froMap, string nameVar)
 {
     this->var = froMap;
     this->nameVar = nameVar;

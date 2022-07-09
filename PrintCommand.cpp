@@ -5,7 +5,7 @@
 #include "PrintCommand.h"
 
 #include <iostream>
-PrintCommand ::PrintCommand(string str, SymTbl *symTbl1)
+PrintCommand ::PrintCommand(string str, SymTbl* symTbl1)
 {
     this->str = str;
     this->symTbl = symTbl1;

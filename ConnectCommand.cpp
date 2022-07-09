@@ -5,7 +5,7 @@
 #include "ConnectCommand.h"
 
 #include <iostream>
-ConnectCommand ::ConnectCommand(string ip, Expression *port)
+ConnectCommand ::ConnectCommand(string ip, Expression* port)
 {
     this->ip = ip;
     this->port = port;

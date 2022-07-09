@@ -11,7 +11,7 @@
 #include "Plus.h"
 #include "SymbolExpression.h"
 
-ShuntingYard::ShuntingYard(SymTbl *expVar)
+ShuntingYard::ShuntingYard(SymTbl* expVar)
 {
     this->expVar = expVar;
     initializeMap();
@@ -35,7 +35,7 @@ int ShuntingYard::precedence(char operation)
     throw "invalid operation!";
 }
 
-Expression *ShuntingYard::applyOp(Expression *val1, Expression *val2, char operation)
+Expression* ShuntingYard::applyOp(Expression* val1, Expression* val2, char operation)
 {
     switch (operation) {
     case '*':
@@ -48,24 +48,24 @@ Expression *ShuntingYard::applyOp(Expression *val1, Expression *val2, char opera
         return new Minus(val1, val2);
     }
 
-    throw std::exception("Invalid operation");
+    throw std::runtime_error("Invalid operation");
 }
 
 // Function that returns value of
 // expression after evaluation.
-Expression *ShuntingYard::createExpression(string tokens)
+Expression* ShuntingYard::createExpression(string tokens)
 {
-    int i;
+    std::size_t i = 0;
 
     // stack to store integer values.
-    stack<Expression *> values;
+    stack<Expression*> values;
 
     // stack to store operators.
     stack<char> ops;
 
     for (i = 0; i < tokens.length(); i++) {
         if (tokens[i] == '-' && (!isdigit(tokens[i - 1]) && !isalpha(tokens[i - 1])) && isdigit(tokens[i + 1])) {
-            Expression *val = new Minus(new Number(0), new Number((tokens[i + 1] - '0')));
+            Expression* val = new Minus(new Number(0), new Number((tokens[i + 1] - '0')));
             values.push(val);
             i += 2;
             continue;
@@ -77,7 +77,7 @@ Expression *ShuntingYard::createExpression(string tokens)
                 varName += tokens[i];
                 i++;
             }
-            Expression *val = new Minus(new Number(0), new SymbolExpression(this->expVar, varName));
+            Expression* val = new Minus(new Number(0), new SymbolExpression(this->expVar, varName));
             values.push(val);
             i--;
             continue;
@@ -105,7 +105,7 @@ Expression *ShuntingYard::createExpression(string tokens)
                 i++;
             }
             i--;
-            Expression *num = new Number(val);
+            Expression* num = new Number(val);
             values.push(num);
         } else if (isalpha((tokens[i]))) {
             string var = "";
@@ -114,7 +114,7 @@ Expression *ShuntingYard::createExpression(string tokens)
                 i++;
             }
             i--;
-            Expression *varExp = new SymbolExpression(this->expVar, var);
+            Expression* varExp = new SymbolExpression(this->expVar, var);
             values.push(varExp);
         }
 
@@ -122,10 +122,10 @@ Expression *ShuntingYard::createExpression(string tokens)
         // entire brace.
         else if (tokens[i] == ')') {
             while (!ops.empty() && ops.top() != '(') {
-                Expression *val2 = values.top();
+                Expression* val2 = values.top();
                 values.pop();
 
-                Expression *val1 = values.top();
+                Expression* val1 = values.top();
                 values.pop();
 
                 char op = ops.top();
@@ -145,10 +145,10 @@ Expression *ShuntingYard::createExpression(string tokens)
             // is an operator. Apply operator on top
             // of 'ops' to top two elements in values stack.
             while (!ops.empty() && precedence(ops.top()) >= precedence(tokens[i])) {
-                Expression *val2 = values.top();
+                Expression* val2 = values.top();
                 values.pop();
 
-                Expression *val1 = values.top();
+                Expression* val1 = values.top();
                 values.pop();
 
                 char op = ops.top();
@@ -166,10 +166,10 @@ Expression *ShuntingYard::createExpression(string tokens)
     // point, apply remaining ops to remaining
     // values.
     while (!ops.empty()) {
-        Expression *val2 = values.top();
+        Expression* val2 = values.top();
         values.pop();
 
-        Expression *val1 = values.top();
+        Expression* val1 = values.top();
         values.pop();
 
         char op = ops.top();

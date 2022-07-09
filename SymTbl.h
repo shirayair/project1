@@ -14,11 +14,11 @@ using namespace std;
 
 class SymTbl
 {
-    map<string, SymVal *> table;
+    map<string, SymVal*> table;
 
 public:
-    SymVal *getSymbol(string sym);
-    void addSymbol(string symName, SymVal *val);
+    SymVal* getSymbol(string sym);
+    void addSymbol(string symName, SymVal* val);
     bool isSymExist(string sym);
     ~SymTbl();
 };

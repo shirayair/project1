@@ -17,10 +17,10 @@ using namespace std;
 class PathSymVal : public SymVal
 {
     string path;
-    FSParamMap *fsParamMap;
+    FSParamMap* fsParamMap;
 
 public:
-    PathSymVal(string path, FSParamMap *fsParamMap1);
+    PathSymVal(string path, FSParamMap* fsParamMap1);
     double getVal() override;
     void setVal(double value) override;
 };

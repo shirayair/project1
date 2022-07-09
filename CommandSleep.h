@@ -13,10 +13,10 @@
 #include <thread>
 class CommandSleep : public Command
 {
-    Expression *sleep;
+    Expression* sleep;
 
 public:
-    explicit CommandSleep(Expression *sleep);
+    explicit CommandSleep(Expression* sleep);
     ~CommandSleep();
     void execute() override;
 };

@@ -16,18 +16,11 @@ FSParamMap::~FSParamMap()
     pthread_mutex_destroy(&this->tex);
 }
 
-bool FSParamMap::parsBuffer(string &buff2)
+bool FSParamMap::parsBuffer(string& buff2)
 {
     std::vector<double> vect;
-    int n = 0;
-    int i = 0;
-    for (; i < buff2.length(); i++) {
-        if (buff2[i] == '\n') {
-            n = i;
-            break;
-        }
-    }
-    if (i == buff2.length()) {
+    auto n = buff2.find('\n');
+    if (std::string::npos == n) {
         return false;
     }
 
@@ -53,7 +46,7 @@ double FSParamMap::getVal(string path)
     return x;
 }
 
-void FSParamMap::inserToMap(vector<double> &vector)
+void FSParamMap::inserToMap(vector<double>& vector)
 {
     pthread_mutex_lock(&this->tex);
     this->pathMap["/instrumentation/airspeed-indicator/indicated-speed-kt"] = vector[0];

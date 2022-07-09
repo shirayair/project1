@@ -4,7 +4,7 @@
 
 #include "ConditionCommand.h"
 
-ConditionCommand::ConditionCommand(Expression *exp1, Expression *exp2, string sign)
+ConditionCommand::ConditionCommand(Expression* exp1, Expression* exp2, string sign)
 {
     this->exp1 = exp1;
     this->exp2 = exp2;
@@ -44,7 +44,7 @@ bool ConditionCommand::checkCondition()
     return false;
 }
 
-void ConditionCommand::addCommand(list<Expression *> commands)
+void ConditionCommand::addCommand(list<Expression*> commands)
 {
     this->commands = commands;
 }

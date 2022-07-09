@@ -10,15 +10,15 @@
 class BinaryExpression : public Expression
 {
 protected:
-    Expression *left;
-    Expression *right;
+    Expression* left;
+    Expression* right;
 
 public:
-    BinaryExpression(Expression *left, Expression *right);
+    BinaryExpression(Expression* left, Expression* right);
 
-    virtual Expression *getLeft();
+    virtual Expression* getLeft();
 
-    virtual Expression *getRight();
+    virtual Expression* getRight();
     virtual ~BinaryExpression();
 };
 

@@ -11,10 +11,10 @@
 class PrintCommand : public Command
 {
     string str;
-    SymTbl *symTbl;
+    SymTbl* symTbl;
 
 public:
-    PrintCommand(string str, SymTbl *symTbl);
+    PrintCommand(string str, SymTbl* symTbl);
     void execute() override;
 };
 

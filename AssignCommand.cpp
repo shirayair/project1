@@ -6,7 +6,7 @@
 
 #include "ShuntingYard.h"
 
-AssignCommand::AssignCommand(SymTbl *symTbl1, string symName, Expression *symValue)
+AssignCommand::AssignCommand(SymTbl* symTbl1, string symName, Expression* symValue)
 {
     this->symTbl = symTbl1;
     this->symName = symName;
@@ -16,7 +16,7 @@ AssignCommand::AssignCommand(SymTbl *symTbl1, string symName, Expression *symVal
 void AssignCommand::execute()
 {
     double enterVal = this->symValue->calculate();
-    SymVal *symVal1 = this->symTbl->getSymbol(this->symName);
+    SymVal* symVal1 = this->symTbl->getSymbol(this->symName);
     symVal1->setVal(enterVal);
 }
 

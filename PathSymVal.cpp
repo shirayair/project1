@@ -6,7 +6,7 @@
 
 #include <thread>
 
-PathSymVal::PathSymVal(string path, FSParamMap *fsParamMap1)
+PathSymVal::PathSymVal(string path, FSParamMap* fsParamMap1)
 {
     this->path = path;
     this->fsParamMap = fsParamMap1;

@@ -17,12 +17,12 @@ using namespace std;
 class Parser
 {
     vector<string> strings;
-    SymTbl *symTbl;
-    FSParamMap *fsParamMap;
+    SymTbl* symTbl;
+    FSParamMap* fsParamMap;
 
 public:
-    Parser(SymTbl *symTbl, vector<string> strings, FSParamMap *fsParamsMap);
+    Parser(SymTbl* symTbl, vector<string> strings, FSParamMap* fsParamsMap);
     void fromStringToExcute();
-    list<Expression *> fromStringToList();
+    list<Expression*> fromStringToList();
 };
 #endif // EX3_PARSER_H

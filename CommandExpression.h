@@ -10,10 +10,10 @@
 
 class CommandExpression : public Expression
 {
-    Command *c = nullptr;
+    Command* c = nullptr;
 
 public:
-    CommandExpression(Command *command);
+    CommandExpression(Command* command);
     ~CommandExpression();
     double calculate();
 };

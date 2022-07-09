@@ -20,8 +20,8 @@ public:
     FSParamMap();
     ~FSParamMap();
     double getVal(string path);
-    bool parsBuffer(string &buff2);
-    void inserToMap(vector<double> &fromXML);
+    bool parsBuffer(string& buff2);
+    void inserToMap(vector<double>& fromXML);
 };
 
 #endif // EX3_FSPARAMMAP_H

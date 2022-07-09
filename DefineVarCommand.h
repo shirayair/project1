@@ -12,17 +12,17 @@
 
 class DefineVarCommand : public Command
 {
-    SymTbl *symTbl;
+    SymTbl* symTbl;
     string varName;
-    Expression *varVal = nullptr;
+    Expression* varVal = nullptr;
     string PointerName = "";
     string path = "";
-    FSParamMap *fsParamMap1;
+    FSParamMap* fsParamMap1;
 
 public:
-    DefineVarCommand(SymTbl *symTbl, string varName, string PointerName);
-    DefineVarCommand(SymTbl *symTbl, string varName, string path, FSParamMap *fsParamMap1);
-    DefineVarCommand(SymTbl *symTbl, string varName, Expression *varVal);
+    DefineVarCommand(SymTbl* symTbl, string varName, string PointerName);
+    DefineVarCommand(SymTbl* symTbl, string varName, string path, FSParamMap* fsParamMap1);
+    DefineVarCommand(SymTbl* symTbl, string varName, Expression* varVal);
     void execute() override;
     ~DefineVarCommand();
 };

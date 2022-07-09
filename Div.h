@@ -10,7 +10,7 @@
 class Div : public BinaryExpression
 {
 public:
-    Div(Expression *expLeft, Expression *expRight);
+    Div(Expression* expLeft, Expression* expRight);
     double calculate();
 };
 

@@ -16,7 +16,7 @@ void Client::connectClient(string ip, int port)
 {
     int sockfd, portno;
     struct sockaddr_in serv_addr;
-    struct hostent *server;
+    struct hostent* server;
     portno = port;
 
     /* Create a socket point */
@@ -33,13 +33,13 @@ void Client::connectClient(string ip, int port)
         exit(0);
     }
 
-    bzero((char *)&serv_addr, sizeof(serv_addr));
+    bzero((char*)&serv_addr, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
-    bcopy((char *)server->h_addr, (char *)&serv_addr.sin_addr.s_addr, (size_t)server->h_length);
+    bcopy((char*)server->h_addr, (char*)&serv_addr.sin_addr.s_addr, (size_t)server->h_length);
     serv_addr.sin_port = htons((uint16_t)portno);
 
     /* Now connect to the server */
-    if (connect(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) {
+    if (connect(sockfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0) {
         perror("ERROR connecting");
         exit(1);
     }

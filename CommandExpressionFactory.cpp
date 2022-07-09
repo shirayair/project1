@@ -16,7 +16,7 @@
 #include "PrintCommand.h"
 #include "WhileCommand.h"
 
-CommandExpressionFactory::CommandExpressionFactory(SymTbl *symTbl1, FSParamMap *fsParamMap)
+CommandExpressionFactory::CommandExpressionFactory(SymTbl* symTbl1, FSParamMap* fsParamMap)
 {
     this->symTbl = symTbl1;
     this->fsParamMap1 = fsParamMap;
@@ -28,7 +28,7 @@ CommandExpressionFactory::~CommandExpressionFactory()
     delete this->shuntingYard;
 }
 
-Expression *CommandExpressionFactory::createCommandExpression(vector<string>::iterator &it)
+Expression* CommandExpressionFactory::createCommandExpression(vector<string>::iterator& it)
 {
     if (symTbl->isSymExist(*it)) {
         ++it;
@@ -62,21 +62,21 @@ Expression *CommandExpressionFactory::createCommandExpression(vector<string>::it
     return nullptr;
 }
 
-Expression *CommandExpressionFactory::getOpenDateServer(vector<string>::iterator &it)
+Expression* CommandExpressionFactory::getOpenDateServer(vector<string>::iterator& it)
 {
-    Expression *port = this->shuntingYard->createExpression(*(++it));
-    Expression *hertz = this->shuntingYard->createExpression(*(++it));
+    Expression* port = this->shuntingYard->createExpression(*(++it));
+    Expression* hertz = this->shuntingYard->createExpression(*(++it));
     return new CommandExpression(new OpenDataServerCommand(port, hertz, fsParamMap1));
 }
 
-Expression *CommandExpressionFactory::getAssignCommand(vector<string>::iterator &it)
+Expression* CommandExpressionFactory::getAssignCommand(vector<string>::iterator& it)
 {
     string symbolName = *(it - 1);
-    Expression *exp = this->shuntingYard->createExpression(*(++it));
+    Expression* exp = this->shuntingYard->createExpression(*(++it));
     return new CommandExpression(new AssignCommand(this->symTbl, symbolName, exp));
 }
 
-Expression *CommandExpressionFactory::getDefineVarCommand(vector<string>::iterator &it)
+Expression* CommandExpressionFactory::getDefineVarCommand(vector<string>::iterator& it)
 {
     string varName = *(++it);
     if (*(++it) == "=") {
@@ -89,18 +89,18 @@ Expression *CommandExpressionFactory::getDefineVarCommand(vector<string>::iterat
             }
         }
 
-        Expression *exp = this->shuntingYard->createExpression(*(++it));
+        Expression* exp = this->shuntingYard->createExpression(*(++it));
         return new CommandExpression(new DefineVarCommand(this->symTbl, varName, exp));
     }
     return new CommandExpression(new DefineVarCommand(this->symTbl, varName, nullptr));
 }
 
-Expression *CommandExpressionFactory::getWhileCommand(vector<string>::iterator &it)
+Expression* CommandExpressionFactory::getWhileCommand(vector<string>::iterator& it)
 {
     // extract condition params
-    Expression *exp1 = this->shuntingYard->createExpression(*(++it));
+    Expression* exp1 = this->shuntingYard->createExpression(*(++it));
     string sign = *(++it);
-    Expression *exp2 = this->shuntingYard->createExpression(*(++it));
+    Expression* exp2 = this->shuntingYard->createExpression(*(++it));
     if (*(++it) != "{") {
         throw "Invalid while condition.";
     }
@@ -108,19 +108,19 @@ Expression *CommandExpressionFactory::getWhileCommand(vector<string>::iterator &
     auto whileCommand = new WhileCommand(exp1, exp2, sign);
     // extract and update his list of commands
     auto blockStrings = extractBlockStrings(it);
-    Parser *parser = new Parser(this->symTbl, blockStrings, this->fsParamMap1);
+    Parser* parser = new Parser(this->symTbl, blockStrings, this->fsParamMap1);
     auto commands = parser->fromStringToList();
     whileCommand->addCommand(commands);
     delete parser;
     return new CommandExpression(whileCommand);
 }
 
-Expression *CommandExpressionFactory::getIfCommand(vector<string>::iterator &it)
+Expression* CommandExpressionFactory::getIfCommand(vector<string>::iterator& it)
 {
     // extract condition params
-    Expression *exp1 = this->shuntingYard->createExpression(*(++it));
+    Expression* exp1 = this->shuntingYard->createExpression(*(++it));
     string sign = *(++it);
-    Expression *exp2 = this->shuntingYard->createExpression(*(++it));
+    Expression* exp2 = this->shuntingYard->createExpression(*(++it));
     if (*(++it) != "{") {
         throw "Invalid while condition.";
     }
@@ -128,14 +128,14 @@ Expression *CommandExpressionFactory::getIfCommand(vector<string>::iterator &it)
     auto ifCommand = new IfCommand(exp1, exp2, sign);
     // extract and update his list of commands
     auto blockStrings = extractBlockStrings(it);
-    Parser *parser = new Parser(this->symTbl, blockStrings, this->fsParamMap1);
+    Parser* parser = new Parser(this->symTbl, blockStrings, this->fsParamMap1);
     auto commands = parser->fromStringToList();
     ifCommand->addCommand(commands);
     delete parser;
     return new CommandExpression(ifCommand);
 }
 
-vector<string> CommandExpressionFactory::extractBlockStrings(vector<string>::iterator &it)
+vector<string> CommandExpressionFactory::extractBlockStrings(vector<string>::iterator& it)
 {
     vector<string> blockStrings;
     while (*(++it) != "}") {
@@ -144,26 +144,26 @@ vector<string> CommandExpressionFactory::extractBlockStrings(vector<string>::ite
     return blockStrings;
 }
 
-Expression *CommandExpressionFactory::getSleepCommand(vector<string>::iterator &it)
+Expression* CommandExpressionFactory::getSleepCommand(vector<string>::iterator& it)
 {
-    Expression *sleep = this->shuntingYard->createExpression(*(++it));
+    Expression* sleep = this->shuntingYard->createExpression(*(++it));
     return new CommandExpression(new CommandSleep(sleep));
 }
 
-Expression *CommandExpressionFactory::getConnectCommand(vector<string>::iterator &it)
+Expression* CommandExpressionFactory::getConnectCommand(vector<string>::iterator& it)
 {
     string ip = (*(++it));
-    Expression *port = this->shuntingYard->createExpression(*(++it));
+    Expression* port = this->shuntingYard->createExpression(*(++it));
     return new CommandExpression(new ConnectCommand(ip, port));
 }
 
-Expression *CommandExpressionFactory::getPrintCommand(vector<string>::iterator &it)
+Expression* CommandExpressionFactory::getPrintCommand(vector<string>::iterator& it)
 {
     string toPrint = *(++it);
     return new CommandExpression(new PrintCommand(toPrint, this->symTbl));
 }
 
-Expression *CommandExpressionFactory::getExitCommand()
+Expression* CommandExpressionFactory::getExitCommand()
 {
     return new CommandExpression(new ExitCommand());
 }

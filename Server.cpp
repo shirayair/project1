@@ -16,9 +16,9 @@
 bool Server::sould_stop;
 pthread_t Server::pthreadID;
 
-void *thread_func(void *args)
+void* thread_func(void* args)
 {
-    struct arg_struct *params = (struct arg_struct *)args;
+    struct arg_struct* params = (struct arg_struct*)args;
     char buffer[BUFFER_SIZE + 1];
     string buff2 = "";
     while (!Server::sould_stop) {
@@ -42,11 +42,10 @@ void *thread_func(void *args)
     return nullptr;
 }
 
-void Server::run(int port, int herz, FSParamMap *fsParamMap)
+void Server::run(int port, int herz, FSParamMap* fsParamMap)
 {
     int sockfd, newsockfd, portno, clilen;
     struct sockaddr_in serv_addr, cli_addr;
-    int n;
 
     /* First call to socket() function */
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
@@ -57,7 +56,7 @@ void Server::run(int port, int herz, FSParamMap *fsParamMap)
     }
 
     /* Initialize socket structure */
-    bzero((char *)&serv_addr, sizeof(serv_addr));
+    bzero((char*)&serv_addr, sizeof(serv_addr));
     portno = port;
 
     serv_addr.sin_family = AF_INET;
@@ -65,7 +64,7 @@ void Server::run(int port, int herz, FSParamMap *fsParamMap)
     serv_addr.sin_port = htons((uint16_t)portno);
 
     /* Now bind the host address using bind() call.*/
-    if (bind(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0) {
+    if (bind(sockfd, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0) {
         perror("ERROR on binding");
         exit(1);
     }
@@ -78,7 +77,7 @@ void Server::run(int port, int herz, FSParamMap *fsParamMap)
     clilen = sizeof(cli_addr);
 
     /* Accept actual connection from the client */
-    newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, (socklen_t *)&clilen);
+    newsockfd = accept(sockfd, (struct sockaddr*)&cli_addr, (socklen_t*)&clilen);
 
     if (newsockfd < 0) {
         perror("ERROR on accept");

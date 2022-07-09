@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-SymVal *SymTbl::getSymbol(string sym)
+SymVal* SymTbl::getSymbol(string sym)
 {
     if (this->table.find(sym) == table.end()) {
         throw "Symbol name doesn't exist";
@@ -14,7 +14,7 @@ SymVal *SymTbl::getSymbol(string sym)
     return (this->table[sym]);
 }
 
-void SymTbl::addSymbol(string symName, SymVal *val)
+void SymTbl::addSymbol(string symName, SymVal* val)
 {
     this->table[symName] = val;
     // cout<< "symbol " << symName<< "added. his val is" << val->getVal()<<endl;

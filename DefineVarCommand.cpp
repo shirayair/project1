@@ -9,20 +9,20 @@
 #include "PathSymVal.h"
 #include "VarSymVal.h"
 
-DefineVarCommand::DefineVarCommand(SymTbl *symTbl, string varName, Expression *varVal)
+DefineVarCommand::DefineVarCommand(SymTbl* symTbl, string varName, Expression* varVal)
 {
     this->symTbl = symTbl;
     this->varName = varName;
     this->varVal = varVal;
 }
-DefineVarCommand::DefineVarCommand(SymTbl *symTbl, string varName, string path, FSParamMap *fsParamMap1)
+DefineVarCommand::DefineVarCommand(SymTbl* symTbl, string varName, string path, FSParamMap* fsParamMap1)
 {
     this->path = path;
     this->varName = varName;
     this->symTbl = symTbl;
     this->fsParamMap1 = fsParamMap1;
 }
-DefineVarCommand::DefineVarCommand(SymTbl *symTbl, string varName, string PointerName)
+DefineVarCommand::DefineVarCommand(SymTbl* symTbl, string varName, string PointerName)
 {
     this->symTbl = symTbl;
     this->varName = varName;

@@ -14,17 +14,17 @@
 
 class ConditionCommand : public Command
 {
-    Expression *exp1;
-    Expression *exp2;
+    Expression* exp1;
+    Expression* exp2;
     string sign;
 
 protected:
-    list<Expression *> commands;
+    list<Expression*> commands;
     bool checkCondition();
 
 public:
-    ConditionCommand(Expression *exp1, Expression *exp2, string sign);
-    void addCommand(list<Expression *> commands);
+    ConditionCommand(Expression* exp1, Expression* exp2, string sign);
+    void addCommand(list<Expression*> commands);
     virtual ~ConditionCommand();
 };
 

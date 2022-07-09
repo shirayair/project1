@@ -10,7 +10,7 @@
 class Plus : public BinaryExpression
 {
 public:
-    Plus(Expression *left, Expression *right);
+    Plus(Expression* left, Expression* right);
 
     virtual double calculate();
 };

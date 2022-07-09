@@ -10,7 +10,7 @@
 #include <sys/types.h>
 
 struct arg_struct {
-    FSParamMap *fsParamMap_args;
+    FSParamMap* fsParamMap_args;
     int socket_args;
 };
 
@@ -20,7 +20,7 @@ class Server
 public:
     static bool sould_stop;
     static pthread_t pthreadID;
-    static void run(int port, int herz, FSParamMap *fsParamMap);
+    static void run(int port, int herz, FSParamMap* fsParamMap);
     static void stop();
 };
 

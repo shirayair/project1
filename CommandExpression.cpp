@@ -4,7 +4,7 @@
 
 #include "CommandExpression.h"
 
-CommandExpression::CommandExpression(Command *command)
+CommandExpression::CommandExpression(Command* command)
 {
     this->c = command;
 }

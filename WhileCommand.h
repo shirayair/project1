@@ -13,7 +13,7 @@
 class WhileCommand : public ConditionCommand
 {
 public:
-    WhileCommand(Expression *exp1, Expression *exp2, string sign);
+    WhileCommand(Expression* exp1, Expression* exp2, string sign);
     void execute() override;
 };
 #endif // EX3_WHILECOMMAND_H

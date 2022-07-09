@@ -10,7 +10,7 @@
 class IfCommand : public ConditionCommand
 {
 public:
-    IfCommand(Expression *exp1, Expression *exp2, string sign);
+    IfCommand(Expression* exp1, Expression* exp2, string sign);
     void execute() override;
 };
 

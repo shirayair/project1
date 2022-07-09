@@ -8,11 +8,11 @@
 #include "SymTbl.h"
 class SymbolExpression : public Expression
 {
-    SymTbl *var;
+    SymTbl* var;
     string nameVar;
 
 public:
-    SymbolExpression(SymTbl *froMap, string nameVar);
+    SymbolExpression(SymTbl* froMap, string nameVar);
     double calculate();
 };
 

@@ -11,12 +11,12 @@
 
 class AssignCommand : public Command
 {
-    SymTbl *symTbl;
+    SymTbl* symTbl;
     string symName;
-    Expression *symValue;
+    Expression* symValue;
 
 public:
-    AssignCommand(SymTbl *symTbl1, string symName, Expression *symValue);
+    AssignCommand(SymTbl* symTbl1, string symName, Expression* symValue);
     void execute() override;
     ~AssignCommand();
 };

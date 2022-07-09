@@ -16,7 +16,7 @@
 int server_fdGlobal;
 // extern bool connectedGame;
 
-OpenDataServerCommand::OpenDataServerCommand(Expression *p, Expression *h, FSParamMap *fsParamMap)
+OpenDataServerCommand::OpenDataServerCommand(Expression* p, Expression* h, FSParamMap* fsParamMap)
 {
     this->port = p;
     this->hertz = h;

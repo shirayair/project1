@@ -14,10 +14,10 @@ using namespace std;
 class VarSymVal : public SymVal
 {
     string name;
-    SymTbl *symTbl;
+    SymTbl* symTbl;
 
 public:
-    VarSymVal(SymTbl *symTbl, string PointerName);
+    VarSymVal(SymTbl* symTbl, string PointerName);
     double getVal() override;
     void setVal(double value) override;
 };

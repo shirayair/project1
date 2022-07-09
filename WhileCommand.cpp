@@ -4,7 +4,7 @@
 
 #include "WhileCommand.h"
 
-WhileCommand::WhileCommand(Expression *exp1, Expression *exp2, string sign) : ConditionCommand(exp1, exp2, sign)
+WhileCommand::WhileCommand(Expression* exp1, Expression* exp2, string sign) : ConditionCommand(exp1, exp2, sign)
 {
 }
 

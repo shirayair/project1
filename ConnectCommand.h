@@ -12,10 +12,10 @@
 class ConnectCommand : public Command
 {
     string ip;
-    Expression *port;
+    Expression* port;
 
 public:
-    ConnectCommand(string ip, Expression *port);
+    ConnectCommand(string ip, Expression* port);
     ~ConnectCommand();
     void execute();
 };

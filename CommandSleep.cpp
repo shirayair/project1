@@ -8,7 +8,7 @@
 #include <thread>
 #include <unistd.h>
 
-CommandSleep::CommandSleep(Expression *sleep)
+CommandSleep::CommandSleep(Expression* sleep)
 {
     this->sleep = sleep;
 }
