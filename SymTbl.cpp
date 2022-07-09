@@ -9,7 +9,7 @@
 SymVal* SymTbl::getSymbol(string sym)
 {
     if (this->table.find(sym) == table.end()) {
-        throw "Symbol name doesn't exist";
+        throw std::runtime_error("Symbol name doesn't exist");
     }
     return (this->table[sym]);
 }

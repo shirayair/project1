@@ -32,7 +32,7 @@ int ShuntingYard::precedence(char operation)
     if (this->prcedence.count(operation)) {
         return this->prcedence.at(operation);
     }
-    throw "invalid operation!";
+    throw std::runtime_error("invalid operation!");
 }
 
 Expression* ShuntingYard::applyOp(Expression* val1, Expression* val2, char operation)

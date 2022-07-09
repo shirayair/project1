@@ -4,4 +4,8 @@ temp/
 build/
 bin/
 *.swp
+.vscode/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
 

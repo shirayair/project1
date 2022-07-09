@@ -102,7 +102,7 @@ Expression* CommandExpressionFactory::getWhileCommand(vector<string>::iterator& 
     string sign = *(++it);
     Expression* exp2 = this->shuntingYard->createExpression(*(++it));
     if (*(++it) != "{") {
-        throw "Invalid while condition.";
+        throw std::runtime_error("Invalid while condition.");
     }
     // build WhileCommand
     auto whileCommand = new WhileCommand(exp1, exp2, sign);
@@ -122,7 +122,7 @@ Expression* CommandExpressionFactory::getIfCommand(vector<string>::iterator& it)
     string sign = *(++it);
     Expression* exp2 = this->shuntingYard->createExpression(*(++it));
     if (*(++it) != "{") {
-        throw "Invalid while condition.";
+        throw std::runtime_error("Invalid while condition.");
     }
     // build IfCommand
     auto ifCommand = new IfCommand(exp1, exp2, sign);
